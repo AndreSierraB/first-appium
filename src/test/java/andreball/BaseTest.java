@@ -32,7 +32,8 @@ public class BaseTest {
         .usingPort(4723)
         /*.withArgument(() -> "--session-override")
         .withArgument(() -> "--log-level", "error")
-        .withArgument(() -> "--command-timeout", "120") // Aumentar el tiempo de espera a 60 segundos*/
+        .withArgument(() -> "--command-timeout", "60") // Aumentar el tiempo de espera a 60 segundos
+        .withArgument(() -> "--startup-timeout", "60000") // Aumentar el tiempo de espera de inicio a 60 segundos*/
         .build();
         service.start();
         
@@ -63,6 +64,15 @@ public class BaseTest {
             "percent", 3.0
         ));}
         while(canScrollMore);
+    }
+
+    public void swipeAction(WebElement ele, String direction){
+        //Swipe action
+        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+            "elementId", ((RemoteWebElement)ele).getId(),
+            "direction", direction,
+            "percent", 0.25
+        ));
     }
 
     @AfterClass
