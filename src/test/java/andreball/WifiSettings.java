@@ -9,7 +9,7 @@ import java.net.MalformedURLException;
 
 import io.appium.java_client.AppiumBy;
 
-public class AppiumBasics extends BaseTest {
+public class WifiSettings extends BaseTest {
     @Test
     public void WifiSettingsName() throws URISyntaxException, MalformedURLException
     {
