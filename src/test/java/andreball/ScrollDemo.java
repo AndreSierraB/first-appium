@@ -9,7 +9,7 @@ public class ScrollDemo extends BaseTest {
     public void ScrollDemoTest() throws MalformedURLException, InterruptedException
     {
         driver.findElement(AppiumBy.accessibilityId("Views")).click();
-        //driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"WebView\"))"));
-        scrollToEndAction();
+        driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"WebView\"))"));
+        //scrollToEndAction();
     }
 }

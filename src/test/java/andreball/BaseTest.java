@@ -40,7 +40,8 @@ public class BaseTest {
         //Configure the Android driver
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName("andrephonemedium");
-        options.setApp("/Users/andreasierra/github/first-appium/src/test/java/resources/ApiDemos-debug.apk");
+        //options.setApp("/Users/andreasierra/github/first-appium/src/test/java/resources/ApiDemos-debug.apk");
+        options.setApp("/Users/andreasierra/github/first-appium/src/test/java/resources/General-Store.apk");
         
         //Android driver
         //Appium code -> Appium server --> Mobile
