@@ -35,11 +35,14 @@ public class eCommerce_tc_2 extends BaseTest
             }
         }
         driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
+        //Explicit wait
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("com.androidsample.generalstore:id/toolbar_title")));
+        wait.until(ExpectedConditions.attributeContains(driver.findElement(By.id("com.androidsample.generalstore:id/toolbar_title")), "text", "Cart"));
+
         String productName = driver.findElement(By.id("com.androidsample.generalstore:id/productName")).getText();
         Assert.assertEquals(productName, "Jordan 6 Rings");
         driver.findElement(By.id("com.androidsample.generalstore:id/btnProceed")).click();
+        Thread.sleep(4000);
     }
 
 }
